@@ -1,24 +1,21 @@
 'use client'
 import clsx from 'clsx'
 import { CircleStop, Mic, Send } from 'lucide-react'
+import { useState } from 'react'
 import styles from './styles.module.css'
 import { useSpeechRecognition } from './useSpeechRecognition'
-import { useEffect, useState } from 'react'
+import { useIsHydrated } from './useisHydrated'
 
 export default function NewMessage() {
-  const [mounted, setMounted] = useState(false)
+  const isHydrated = useIsHydrated()
   const [text, setText] = useState('')
 
   const { isListening, isSupported, start, stop } =
     useSpeechRecognition(setText)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   return (
     <form className={styles.form}>
-      {mounted && isSupported && (
+      {isHydrated && isSupported && (
         <button
           className={clsx(styles.button, styles.btn_mic)}
           type="button"

@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { MessageCircleQuestionMark } from 'lucide-react'
 import Image from 'next/image'
 import styles from './page.module.css'
-import NewMessage from './newMessage/component'
+import NewMessage from './newMessage'
 
 const MOCK_MESSAGES = [
   {

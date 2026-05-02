@@ -33,7 +33,7 @@ export const useSpeechRecognition = (setText: (text: string) => void) => {
 
     recognition.start()
     recognitionRef.current = recognition
-  }, [SpeechRecognition])
+  }, [SpeechRecognition, setText])
 
   const stop = useCallback(() => {
     recognitionRef.current?.stop()
