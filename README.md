@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BlurQuest: AI-based Guessing Game
+
+BlurQuest is an interactive web-based guessing game where artificial intelligence selects a secret word from a chosen category, and the user tries to guess it. The AI provides hints in the form of "hot" or "cold," and also shows a blurred image that becomes clear upon the correct answer.
+
+## Features
+
+- **AI Hints**: Uses Google Gemini to generate hints and manage the game.
+- **Visual Hints**: Blurred images from Unsplash that become clear when guessed.
+- **Voice Features**: Support for speech synthesis and voice recognition for convenience.
+- **Categories**: Choice from predefined categories or suggest your own.
+- **Statistics**: Tracking time and number of attempts.
+
+## Tech Stack
+
+- **Frontend**: Next.js 16, React 19, TypeScript
+- **AI**: Google Gemini 3.1 Flash Lite (via AI SDK)
+- **Images**: Unsplash API
+- **Styling**: CSS Modules
+- **Icons**: Lucide React
+- **Validation**: Zod
+- **Markdown**: React Markdown
+- **Tools**: ESLint, Husky for pre-commit hooks
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js
+- pnpm (or npm/yarn)
+- API keys for Vercel API Gateway, Google AI, Unsplash will be required
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running in Development Mode
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm build
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Linting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm lint
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `app/(home)/` — Main game page with components in subfolders for displaying and sending messages
+- `app/api/chat/` — API endpoint for AI chat
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How to Play
+
+1. Choose a category or suggest your own.
+2. AI will select a secret word and show a blurred image.
+3. Make guesses, receiving "hot" or "cold" hints.
+4. When you guess correctly, the image will clear, and you'll see statistics.
+5. Start a new game!
