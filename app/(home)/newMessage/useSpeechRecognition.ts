@@ -11,7 +11,7 @@ export const useSpeechRecognition = (setText: (text: string) => void) => {
 
   const start = () => {
     if (!SpeechRecognition) {
-      console.warn('Speech Recognition is not supported')
+      console.warn('Speech recognition is not supported')
       return
     }
 

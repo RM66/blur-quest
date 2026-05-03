@@ -22,13 +22,9 @@ body {
 }
 
 body {
-  align-items: center;
   background: var(--foreground);
   color: var(--text);
-  display: flex;
-  flex-direction: column;
   font-family: var(--font-nunito), sans-serif;
-  min-height: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }

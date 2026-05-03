@@ -1,0 +1,31 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+
+  &::before {
+    box-shadow: var(--shadow_chat);
+    content: '';
+    position: sticky;
+    top: 0;
+  }
+}
+
+.message {
+  background: var(--foreground);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow_msg);
+  padding: 0.9em 1.1em;
+}
+
+.msg_ai {
+  align-self: flex-start;
+  background: #080e20;
+  border-top-left-radius: 0;
+  color: var(--text-secondary);
+}
+
+.msg_user {
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}

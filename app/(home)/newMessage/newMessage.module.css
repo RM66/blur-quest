@@ -3,6 +3,7 @@
   bottom: 0;
   box-shadow: var(--shadow_chat);
   font-size: 0;
+  margin-top: auto;
   position: sticky;
 }
 
