@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef } from 'react'
 
 export const useSpeechRecognition = (setText: (text: string) => void) => {
   const SpeechRecognition =
@@ -9,7 +9,7 @@ export const useSpeechRecognition = (setText: (text: string) => void) => {
   const [isListening, setIsListening] = useState(false)
   const recognitionRef = useRef<SpeechRecognition | null>(null)
 
-  const start = useCallback(() => {
+  const start = () => {
     if (!SpeechRecognition) {
       console.warn('Speech Recognition is not supported')
       return
@@ -33,11 +33,11 @@ export const useSpeechRecognition = (setText: (text: string) => void) => {
 
     recognition.start()
     recognitionRef.current = recognition
-  }, [SpeechRecognition, setText])
+  }
 
-  const stop = useCallback(() => {
+  const stop = () => {
     recognitionRef.current?.stop()
-  }, [])
+  }
 
   return {
     isListening,

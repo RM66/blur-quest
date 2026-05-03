@@ -2,9 +2,9 @@
 import clsx from 'clsx'
 import { CircleStop, Mic, Send } from 'lucide-react'
 import { useState } from 'react'
-import styles from './styles.module.css'
+import styles from './newMessage.module.css'
 import { useSpeechRecognition } from './useSpeechRecognition'
-import { useIsHydrated } from './useisHydrated'
+import { useIsHydrated } from './useIsHydrated'
 
 export default function NewMessage() {
   const isHydrated = useIsHydrated()

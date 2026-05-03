@@ -1,4 +1,4 @@
-.page {
+.main {
   --hor-padding: 42px;
   --vert-padding: 24px;
   --shadow_chat: 0px 0px 14px 14px var(--background);
@@ -59,95 +59,16 @@
   }
 }
 
-.gap {
-  gap: 1.5em;
-
-  @media (max-width: 600px) {
-    gap: 1em;
-  }
-}
-
 .content {
-  composes: gap;
-
   background: linear-gradient(30deg, var(--shadow) 0%, transparent 30% 100%);
   display: flex;
+  gap: 1.5em;
   overflow: auto;
   padding: 0 var(--hor-padding);
   width: 100%;
 
   @media (max-width: 600px) {
     flex-direction: column;
+    gap: 1em;
   }
-}
-
-.img_container {
-  flex-basis: 50%;
-  min-width: 0;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.img_wrapper {
-  background: var(--foreground);
-  border-radius: var(--radius);
-  border-top-left-radius: 0;
-  box-shadow: var(--shadow_msg);
-  margin-top: 2px;
-  overflow: hidden;
-
-  @media (max-width: 600px) {
-    width: fit-content;
-  }
-}
-
-.image {
-  height: auto;
-  display: block;
-
-  @media (min-width: 601px) {
-    width: 100%;
-  }
-}
-
-.col {
-  composes: gap;
-
-  display: flex;
-  flex-basis: 50%;
-  flex-direction: column;
-}
-
-.chat {
-  display: flex;
-  flex-direction: column;
-  gap: inherit;
-
-  &::before {
-    box-shadow: var(--shadow_chat);
-    content: '';
-    position: sticky;
-    top: 0;
-  }
-}
-
-.message {
-  background: var(--foreground);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow_msg);
-  padding: 0.9em 1.1em;
-}
-
-.msg_ai {
-  align-self: flex-start;
-  background: #080e20;
-  border-top-left-radius: 0;
-  color: var(--text-secondary);
-}
-
-.msg_user {
-  align-self: flex-end;
-  border-bottom-right-radius: 0;
 }
