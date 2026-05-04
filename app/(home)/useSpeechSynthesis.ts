@@ -1,18 +1,24 @@
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 
 export const useSpeechSynthesis = () => {
   const synth =
     typeof window !== 'undefined' ? window.speechSynthesis : undefined
 
-  const voice = useRef(
-    synth
-      ?.getVoices()
-      .find((v) =>
-        ['Google US English', 'com.apple.voice.compact.en-GB.Daniel'].includes(
-          v.voiceURI,
-        ),
-      ) || null,
-  )
+  const voice = useRef<SpeechSynthesisVoice | null>(null)
+
+  useEffect(() => {
+    if (voice.current) return
+
+    voice.current =
+      synth
+        ?.getVoices()
+        .find((v) =>
+          [
+            'Google US English',
+            'com.apple.voice.compact.en-GB.Daniel',
+          ].includes(v.voiceURI),
+        ) || null
+  }, [synth])
 
   const pronounce = useCallback(
     (text: string) => {

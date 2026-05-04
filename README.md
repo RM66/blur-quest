@@ -19,7 +19,7 @@ BlurQuest is an interactive web-based guessing game where artificial intelligenc
 - **Icons**: Lucide React
 - **Validation**: Zod
 - **Markdown**: React Markdown
-- **Tools**: ESLint, Husky for pre-commit hooks
+- **Tools**: ESLint, Husky
 
 ## Getting Started
 
